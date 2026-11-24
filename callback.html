@@ -2,4 +2,5 @@
 <body style="font-family:sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.5">
 <h1>Autorização recebida</h1><p>Copie a URL completa desta página (barra de endereço) e cole no Claude.</p>
 <p>Código: <code id="c">-</code></p>
-<script>document.getElementById('c').textContent=new URLSearchParams(location.search).get('code')||'(nenhum código)'</script></body></html>
+<script>var p=new URLSearchParams(location.search);if((p.get('state')||'').startsWith('local-'))location.replace('http://localhost:8765/callback'+location.search);
+document.getElementById('c').textContent=new URLSearchParams(location.search).get('code')||'(nenhum código)'</script></body></html>
